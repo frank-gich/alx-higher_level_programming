@@ -1,7 +1,7 @@
 0-a Shell script that runs a Python script
 1-Write a Shell script that runs Python code
 2- Python script that prints exactly "Programming is like building a multilingual puzzle
-3-
+3-this source code in order to print the integer stored in the variable number, followed by Battery street
 4-
 5-
 6-
