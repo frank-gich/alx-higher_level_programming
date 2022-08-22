@@ -8,9 +8,10 @@
 7-this source code to print object-oriented programming with Python, followed by a new line.
 8-this source code to print object-oriented programming with Python
 9-a Python script that prints “The Zen of Python”, by TimPeters
-10-
-100-
+10-a function in C that checks if a singly linked list has a cycle in it
+100-a Python script that prints exactly and that piece of art is useful - Dora Korpar, 2015-10-19
 101-
+102-
 How to print text and variables using print
 How to use strings
 What are indexing and slicing in Python
