@@ -5,11 +5,12 @@
 4-the source code in order to print the float stored in the variable number with a precision of 2 digits
 5-his source code in order to print 3 times a string stored in the variable str, followed by its first 9 characters.
 6-this source code to print Welcome to Holberton School!
-7-
-8-
-9-
+7-this source code to print object-oriented programming with Python, followed by a new line.
+8-this source code to print object-oriented programming with Python
+9-a Python script that prints “The Zen of Python”, by TimPeters
 10-
-
+100-
+101-
 How to print text and variables using print
 How to use strings
 What are indexing and slicing in Python
