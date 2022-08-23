@@ -6,4 +6,3 @@ for i in range(0, 26):
     else:
         ch = chr(ch)
     print("{}".format(ch), end="")
-    
