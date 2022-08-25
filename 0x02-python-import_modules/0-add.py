@@ -7,6 +7,4 @@ def add(a, b):
     b = 2
     print("{:d} + {:d} = {:d}".format(a, b, add(a, b)))
 
-if __import__ == "__import__":
-    add()
     
