@@ -2,7 +2,6 @@
 
 """Defines a text file-reading function."""
 
-
 def read_lines(filename="", nb_lines=0):
     """Print a given number of lines from a UTF8 text file to stdout.
     Args:
