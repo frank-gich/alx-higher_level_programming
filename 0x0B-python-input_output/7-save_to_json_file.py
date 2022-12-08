@@ -1,10 +1,15 @@
 #!/usr/bin/python3
+""" Load, add, save  """
+from sys import argv
 
-"""Defines a JSON file-writing function."""
-import json
 
+load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
+save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
 
-def save_to_json_file(my_obj, filename):
-    """Write an object to a text file using JSON representation."""
-    with open(filename, "w") as f:
-        json.dump(my_obj, f)
+""" Script that adds all arguments to a Python list,
+and then save them to a file """
+try:
+    add_i = load_from_json_file('add_item.json')
+    save_to_json_file(add_i + argv[1:], 'add_item.json')
+except Exception:
+    save_to_json_file(argv[1:], 'add_item.json')
