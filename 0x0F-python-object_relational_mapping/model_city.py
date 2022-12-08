@@ -1,5 +1,3 @@
-
-
 #!/usr/bin/python3
 """
 Class definition of a City
