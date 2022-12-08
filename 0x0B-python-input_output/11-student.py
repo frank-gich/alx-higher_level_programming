@@ -25,4 +25,4 @@ class Student:
         """ Replaces all attributes of the Student instance"""
         save = vars(self)
         for key, value in json.items():
-            save[key] = 
+            save[key] = value
