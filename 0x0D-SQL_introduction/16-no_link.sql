@@ -1,6 +1,3 @@
--- Lists all records of the table second_table having a name value.
--- Records are ordered by descending score.
-SELECT `score`, `name`
-FROM `second_table`
-WHERE `name` != ""
-ORDER BY `score` DESC
+-- Do not list rows with NULL column
+-- List rows only where `name` is not NULL
+SELECT score, name FROM `second_table` WHERE NAME IS NOT NULL ORDER BY score desc;

@@ -1,5 +1,3 @@
--- lists all records of the table second_table.
--- Records are ordered by decending sscore.
-SELECT 'SCORE', 'NAME'
-FROM 'second_table'
-ORDER BY 'scoore' DESC;
+-- List by best
+-- List all records of the `second_table` by `score` in descending order
+SELECT score, name FROM `second_table` ORDER BY score desc;
