@@ -1,12 +1,7 @@
 #!/usr/bin/node
-// Basic print with Javascript
 
-const array = ['C is fun',
-  'Python is cool',
-  'Javascript is amazing'];
+const arrayStrings = ['C is fun', 'Python is cool', 'JavaScript is amazing'];
 let i = 0;
-
-while (array[i]) {
-  console.log(array[i]);
-  i++;
+for (i; i < arrayStrings.length; i++) {
+  console.log(arrayStrings[i]);
 }
