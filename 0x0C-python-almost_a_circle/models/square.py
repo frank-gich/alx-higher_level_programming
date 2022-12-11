@@ -1,50 +1,82 @@
 #!/usr/bin/python3
-""" New class Square """
+"""This module defines a class, Square, which inherits
+from classes Base and Rectangle
+"""
+
+
+from models.base import Base
 from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
-    """ Class Square that inherist from Rectangle """
+    """This class represents a square, and inherits
+    from classes Rectangle.
+    """
 
     def __init__(self, size, x=0, y=0, id=None):
-        """ Class constructor """
+        """Instantiates a class object.
+
+        Attributes
+            size: size of square
+            x: x axis offset
+            y: y axis offset
+            id: object id
+        """
         super().__init__(size, size, x, y, id)
         self.size = size
 
-    """ Returns printable string representation
-    of an instance """
-    def __str__(self):
-        return ("[{}] ({}) {:d}/{:d} - {:d}".format(
-            self.__class__.__name__, self.id, self.x,
-            self.y, self.size))
+    def update(self, *args, **kwargs):
+        """Update class attributes"""
+        if len(args) > 0:
+            try:
+                self.id = args[0]
+                self.size = args[1]
+                self.x = args[2]
+                self.y = args[3]
+            except IndexError:
+                pass
+        else:
+            if 'id' in kwargs:
+                self.id = kwargs['id']
+            if 'size' in kwargs:
+                self.size = kwargs['size']
+            if 'x' in kwargs:
+                self.x = kwargs['x']
+            if 'y' in kwargs:
+                self.y = kwargs['y']
 
-    """ Size getter and setter """
+    def to_dictionary(self):
+        """Return a dict representation of object.
+        Dict keys are stripped of name mangling and
+        values copied to new dictionary.
+        """
+        clean = {}
+        for key, val in self.__dict__.items():
+            clean_key = key.split('_')[-1]
+            if clean_key == 'width':
+                clean['size'] = val
+            if clean_key in ['id', 'x', 'y']:
+                clean[clean_key] = val
+        return clean
+
+    def __str__(self):
+        """Returns a string representation of object"""
+        return '[Square] ({}) {}/{} - {}'.format(self.id, self.x,
+                                                 self.y, self.size)
+
     @property
     def size(self):
-        return (self.width)
+        """Retrieve the value of size variable"""
+        # return self.__size
+        return self.width
 
     @size.setter
     def size(self, value):
+        """Set the value of size variable"""
         self.width = value
         self.height = value
-
-    def update(self, *args, **kwargs):
-        """ This method assigns an argument to each attribute """
-        if args:
-            for argmts in range(len(args)):
-                if argmts == 0:
-                    self.id = args[argmts]
-                if argmts == 1:
-                    self.size = args[argmts]
-                if argmts == 2:
-                    self.x = args[argmts]
-                if argmts == 3:
-                    self.y = args[argmts]
-
-        else:
-            for key, value in kwargs.items():
-                setattr(self, key, value)
-
-    def to_dictionary(self):
-        """ Returns the dictionary representation of a Rectangle"""
-        return ({'id': self.id, 'x': self.x, 'size': self.size, 'y': self.y})
+        # if type(value) is not int:
+        #     raise TypeError('width must be an integer')
+        # if value <= 0:
+        #     raise ValueError('width must be > 0')
+        # self.__size = value
