@@ -1,20 +1,13 @@
 #!/usr/bin/python3
-from collections import UserDict
 import sys
 
 
 def safe_function(fct, *args):
-    """Executes a function safely.
-    Args:
-        fct: The function to execute.
-        args: Arguments for fct.
-    Returns:
-        If an error occurs - None.
-        Otherwise - the result of the call to fct.
-    """
     try:
-        result = fct(*args)
-        return (result)
-    except UserDict.DoesNotExist:
-        print("Exception: {}".format(sys.exc_info()[1]), file=sys.stderr)
-        return (None)
+        func = fct(*args)
+
+    except Exception as error:
+        func = None
+        sys.stderr.write("Exception: {}\n".format(error))
+
+    return (func)
